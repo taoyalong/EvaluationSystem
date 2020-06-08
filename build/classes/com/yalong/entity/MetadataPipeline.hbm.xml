@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-27 16:05:01 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.yalong.entity.MetadataPipeline" table="metadata_pipeline">
+        <id name="PId" type="java.lang.String">
+            <column name="PID" />
+            <generator class="assigned" />
+        </id>
+        <property name="PType" type="java.lang.String">
+            <column name="PTYPE" />
+        </property>
+        <property name="PPressure" type="java.lang.String">
+            <column name="PPRESSURE" />
+        </property>
+        <property name="PFlow" type="java.lang.String">
+            <column name="PFLOW" />
+        </property>
+        <property name="PTemperature" type="java.lang.String">
+            <column name="PTEMPERATURE" />
+        </property>
+        <property name="PCaliber" type="java.lang.String">
+            <column name="PCALIBER" />
+        </property>
+        <property name="PLength" type="java.lang.String">
+            <column name="PLENGTH" />
+        </property>
+        <property name="PThickness" type="java.lang.String">
+            <column name="PTHICKNESS" />
+        </property>
+    </class>
+</hibernate-mapping>

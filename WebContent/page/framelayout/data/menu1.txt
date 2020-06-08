@@ -1,0 +1,18 @@
+﻿[
+    { "id": "xtgl", iconCls: "fa fa-desktop", text: "信息管理", children: [
+        { "id": "xzgl", iconCls: "fa fa-leaf", text: "管道管理", url: "../PipelineMan/main.jsp" },
+        { "id": "sjzd", iconCls: "fa fa-book", text: "阀门管理", url:"../ElbowMan/main.jsp"  },
+        { "id": "djbm", iconCls: "fa fa-barcode", text: "弯头管理", url:"../ValveMan/main.jsp" },
+    ]
+    },
+{ "id": "bdzx", iconCls: "fa fa-table", text: "评价中心", children: [
+        { "id": "zdybd", iconCls: "fa fa-puzzle-piece", text: "管道评价", url: "../PipelineMan/evaluation.jsp" },
+        { "id": "fbbdgn", iconCls: "fa fa-list-alt", text: "阀门评价", url:"../ValveMan/evaluation.jsp" },
+		{ "id": "bdfbsl", iconCls: "fa fa-list-alt", text: "弯头评价", url:"../ElbowMan/evaluation.jsp" }
+    ]
+},
+{ "id": "lczx", iconCls: "fa fa-share-alt", text: "用户管理", children: [
+          { "id": "mbgl", iconCls: "fa fa-share-alt", text: "用户管理", url: "../UserMan/user.jsp" }
+    ]
+}
+]

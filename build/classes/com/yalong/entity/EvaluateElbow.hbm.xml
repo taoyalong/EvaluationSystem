@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-27 16:05:01 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.yalong.entity.EvaluateElbow" table="EVALUATE_ELBOW">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="EId" type="java.lang.String">
+            <column name="E_ID" />
+        </property>
+        <property name="EName" type="java.lang.String">
+            <column name="E_NAME" />
+        </property>
+        <property name="ETime" type="java.util.Date">
+            <column name="E_TIME" />
+        </property>
+        <property name="ESpeed" type="java.lang.String">
+            <column name="E_SPEED" />
+        </property>
+        <property name="ECaliber" type="java.lang.String">
+            <column name="E_CALIBER" />
+        </property>
+        <property name="ELength" type="java.lang.String">
+            <column name="E_LENGTH" />
+        </property>
+        <property name="EExternalTemperature" type="java.lang.String">
+            <column name="e_external_temperature" />
+        </property>
+        <property name="EAmbientTemperature" type="java.lang.String">
+            <column name="e_ambient_temperature" />
+        </property>
+        <property name="EHeatLoss" type="java.lang.String">
+            <column name="e_heat_loss" />
+        </property>
+        <property name="EResult" type="java.lang.String">
+            <column name="e_result" />
+        </property>
+    </class>
+</hibernate-mapping>

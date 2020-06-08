@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"    
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+        xmlns:p="http://www.springframework.org/schema/p"  
+        xmlns:aop="http://www.springframework.org/schema/aop"   
+        xmlns:context="http://www.springframework.org/schema/context"  
+        xmlns:jee="http://www.springframework.org/schema/jee"  
+        xmlns:tx="http://www.springframework.org/schema/tx"  
+        xsi:schemaLocation="    
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd  
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd  
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.2.xsd  
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+ <!-- 类似于财务部门一样，类就是钱，所有需要类的实例都由srping去管理 -->
+  <!-- 添加sessionFactory bane ，注意，该类是Spring提供的 -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" scope="prototype">
+        <!-- 注入Hibernate 配置文件路径,前面要加上  classpath:-->
+        <property name="configLocations" value="classpath:hibernate.cfg.xml"/><!-- 将hibernate添加到sessionfactory中的configlocation -->
+    </bean>
+<!--    useraction -->
+    <bean id="myIndexDao" class="com.yalong.dao.UsrDaoImpl" scope="prototype"><!-- 建立myindexdao 的bean类为indexdaoimpl 将sessionfactory属性设置为前面的bean
+        把sessionFactory 注入给IndexDao -->
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+   <!--   myIndexService = new ssh.service.IndexServiceImpl() -->
+    <bean id="myIndexService" class="com.yalong.service.UserserviceImpl" scope="prototype"><!-- 将myindexservice 类为indexserviceimpl建立bean 并且为属性id建立引用 -->
+        <property name="id" ref="myIndexDao"/>
+    </bean>
+    
+      <bean id="myIndexAction" class="com.yalong.action.UserAction" scope="prototype"><!-- 建立javabeanmyIndexAction 并且为属性is建立 引用
+        setIs(myIndexService) -->
+        <property name="is" ref="myIndexService"/>  <!-- 建立子属性is引用myIndexservice bean -->
+    </bean>
+<!--  elbowspirng -->
+    <bean id="myelbowAction" class="com.yalong.action.ElbowAction" scope="prototype"><!-- 建立javabeanmyIndexAction 并且为属性is建立 引用
+        setIs(myIndexService) -->
+        <property name="elbowManager" ref="myelbowService"/>  <!-- 建立子属性is引用myIndexservice bean -->
+    </bean>
+    
+	<bean id="myelbowService" class="com.yalong.service.ElbowManagerImpl" scope="prototype"><!-- 将myindexservice 类为indexserviceimpl建立bean 并且为属性id建立引用 -->
+        <property name="elbow" ref="myelbowDao"/>
+    </bean>
+    
+    <bean id="myelbowDao" class="com.yalong.dao.ElbowDaoImpl" scope="prototype"><!-- 建立myindexdao 的bean类为indexdaoimpl 将sessionfactory属性设置为前面的bean
+        把sessionFactory 注入给IndexDao -->
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+<!-- Pipeline -->
+ <bean id="mypipelineAction" class="com.yalong.action.PipelineAction" scope="prototype"><!-- 建立javabeanmyIndexAction 并且为属性is建立 引用
+        setIs(myIndexService) -->
+        <property name="pipelineManager" ref="pipelineManager"/>  <!-- 建立子属性is引用myIndexservice bean -->
+    </bean>
+    
+	<bean id="pipelineManager" class="com.yalong.service.PipelineManagerImpl" scope="prototype"><!-- 将myindexservice 类为indexserviceimpl建立bean 并且为属性id建立引用 -->
+        <property name="pipel" ref="pipelineDao"/>
+    </bean>
+    
+    <bean id="pipelineDao" class="com.yalong.dao.PipelineDaoImpl" scope="prototype"><!-- 建立myindexdao 的bean类为indexdaoimpl 将sessionfactory属性设置为前面的bean
+        把sessionFactory 注入给IndexDao -->
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <!-- valve -->
+ <bean id="myValveAction" class="com.yalong.action.ValveAction" scope="prototype"><!-- 建立javabeanmyIndexAction 并且为属性is建立 引用
+        setIs(myIndexService) -->
+       <!--  <property name="ValveManager" ref="ValveManager"/> -->  <!-- 建立子属性is引用myIndexservice bean -->
+	<property name="valveManager" ref="ValveManager"></property>
+    </bean>
+    
+	<bean id="ValveManager" class="com.yalong.service.ValveManagerImpl" scope="prototype"><!-- 将myindexservice 类为indexserviceimpl建立bean 并且为属性id建立引用 -->
+       <property name="valve" ref="ValveDao"></property>
+    </bean>
+    
+    <bean id="ValveDao" class="com.yalong.dao.ValveDaoImpl" scope="prototype"><!-- 建立myindexdao 的bean类为indexdaoimpl 将sessionfactory属性设置为前面的bean
+        把sessionFactory 注入给IndexDao -->
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+</beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.password">123456</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=EvaluationSystem</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+       <!-- 设置默认的数据库连接池 -->
+        <property name="connection.pool_size">5</property>
+        <!-- 显示SQL -->
+        <property name="show_sql">false</property>
+        <!-- 格式化SQL -->
+        <property name="format_sql">true</property>
+        <!-- 根据schema更新数据表的工具 -->
+        <property name="hbm2ddl.auto">update</property>        
+        <!-- 数据表映射配置文件 -->
+        <mapping resource="com/yalong/entity/User.hbm.xml"/>
+        <mapping resource="com/yalong/entity/MetadataElbow.hbm.xml"/>
+        <mapping resource="com/yalong/entity/MetadataPipeline.hbm.xml"/>
+        <mapping resource="com/yalong/entity/MetadataValve.hbm.xml"/>
+        <mapping resource="com/yalong/entity/MetadataValve.hbm.xml"/>
+        <mapping resource="com/yalong/entity/EvaluateValve.hbm.xml"/>
+        <mapping resource="com/yalong/entity/EvaluatePipeline.hbm.xml"/>
+        <mapping resource="com/yalong/entity/EvaluateElbow.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-27 16:05:01 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.yalong.entity.MetadataValve" table="METADATA_VALVE">
+        <id name="VId" type="java.lang.String">
+            <column name="VID" />
+            <generator class="assigned" />
+        </id>
+        <property name="VType" type="java.lang.String">
+            <column name="VTYPE" />
+        </property>
+        <property name="VPressure" type="java.lang.String">
+            <column name="VPRESSURE" />
+        </property>
+        <property name="VFlow" type="java.lang.String">
+            <column name="VFLOW" />
+        </property>
+        <property name="VTemperature" type="java.lang.String">
+            <column name="VTEMPERATURE" />
+        </property>
+        <property name="VCaliber" type="java.lang.String">
+            <column name="VCALIBER" />
+        </property>
+        <property name="VLength" type="java.lang.String">
+            <column name="VLENGTH" />
+        </property>
+        <property name="VThickness" type="java.lang.String">
+            <column name="VTHICKNESS" />
+        </property>
+    </class>
+</hibernate-mapping>

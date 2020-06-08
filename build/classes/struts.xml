@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.i18n.encoding" value="GBK" />
+
+	<package name="user" namespace="/user" extends="json-default">
+
+		<result-types>
+			<result-type name="jsonResult"
+				class="com.yalong.utils.JSONResult" />
+		</result-types>
+
+
+		<action name="user" class="myIndexAction">
+			<result name="success" type="json">
+				<param name="includeProperties">info</param>
+			</result>
+		</action>
+		<action name="getuser" class="myIndexAction" method="getuser">
+			<result type="jsonResult" />
+		</action>
+		<action name="exit" class="myIndexAction" method="exit">
+			<result name="success">/login.jsp</result>
+		</action>
+		
+		<action name="search" class="myIndexAction" method="search">
+
+			<result name="loginfail">/login.jsp</result>
+			<result type="jsonResult" />
+		</action>
+
+		<action name="save" class="myIndexAction" method="saveInfo">
+			<result type="jsonResult" />
+		</action>
+		<action name="editpass" class="myIndexAction" method="editpass">
+			<result type="jsonResult" />
+		</action>
+		<action name="saveuser" class="myIndexAction" method="saveuser">
+			<result type="jsonResult" />
+		</action>
+	</package>
+
+	<!-- elbow -->
+	<package name="elbow" namespace="/elbow" extends="json-default">
+
+		<result-types>
+			<result-type name="jsonResult"
+				class="com.yalong.utils.JSONResult" />
+		</result-types>
+
+		<action name="elbow" class="myelbowAction" method="search">
+
+			<result type="jsonResult" />
+		</action>
+		<action name="save" class="myelbowAction" method="saveInfo">
+
+			<result type="jsonResult" />
+		</action>
+		<action name="mulisearch" class="myelbowAction"
+			method="mulisearch">
+
+			<result type="jsonResult" />
+		</action>
+
+		<action name="evaluationSearch" class="myelbowAction"
+			method="evaluationSearch">
+
+			<result name="success" type="jsonResult">
+			</result>
+		</action>
+		<action name="deleteEvaluation" class="myelbowAction"
+			method="deleteEvaluation">
+
+			<result name="loginfail">/login.jsp</result>
+			<result name="success" type="jsonResult">
+			</result>
+		</action>
+		<action name="evalution" class="myelbowAction"
+			method="evalution">
+
+			<result name="success" type="jsonResult">
+			</result>
+		</action>
+	</package>
+
+	<!-- pipeline -->
+	<package name="pipeline" namespace="/pipeline"
+		extends="json-default">
+
+		<result-types>
+			<result-type name="jsonResult"
+				class="com.yalong.utils.JSONResult" />
+		</result-types>
+
+		<action name="search" class="mypipelineAction" method="search">
+			<result type="jsonResult" />
+		</action>
+		<action name="save" class="mypipelineAction" method="saveInfo">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="evaluationSearch" class="mypipelineAction"
+			method="evaluationSearch">
+			<result name="success" type="jsonResult">
+			</result>
+		</action>
+		<action name="deleteEvaluation" class="mypipelineAction"
+			method="deleteEvaluation">
+			<result name="success" type="jsonResult">
+			</result>
+		</action>
+		<action name="evalution" class="mypipelineAction"
+			method="evalution">
+			<result name="success" type="jsonResult">
+			</result>
+		</action>
+	</package>
+	<!-- valve -->
+	<package name="valve" namespace="/valve" extends="json-default">
+
+		<result-types>
+			<result-type name="jsonResult"
+				class="com.yalong.utils.JSONResult" />
+		</result-types>
+
+		<action name="search" class="myValveAction" method="search">
+			<result type="jsonResult" />
+		</action>
+		<action name="save" class="myValveAction" method="saveInfo">
+			<result name="success" type="json">
+			</result>
+		</action>
+		<action name="evaluationSearch" class="myValveAction"
+			method="evaluationSearch">
+			<result name="success" type="jsonResult">
+			</result>
+		</action>
+		<action name="deleteEvaluation" class="myValveAction"
+			method="deleteEvaluation">
+			<result name="success" type="jsonResult">
+			</result>
+		</action>
+		<action name="evalution" class="myValveAction"
+			method="evalution">
+			<result name="success" type="jsonResult">
+			</result>
+		</action>
+	</package>
+
+</struts>

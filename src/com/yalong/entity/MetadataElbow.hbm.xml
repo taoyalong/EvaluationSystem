@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-27 16:05:01 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.yalong.entity.MetadataElbow" table="METADATA_ELBOW">
+        <id name="EId" type="java.lang.String">
+            <column name="EID" />
+            <generator class="assigned" />
+        </id>
+        <property name="EType" type="java.lang.String">
+            <column name="ETYPE" />
+        </property>
+        <property name="EPressure" type="java.lang.String">
+            <column name="EPRESSURE" />
+        </property>
+        <property name="EFlow" type="java.lang.String">
+            <column name="EFLOW" />
+        </property>
+        <property name="ETemperature" type="java.lang.String">
+            <column name="ETEMPERATURE" />
+        </property>
+        <property name="ECaliber" type="java.lang.String">
+            <column name="ECALIBER" />
+        </property>
+        <property name="EThickness" type="java.lang.String">
+            <column name="ETHICKNESS" />
+        </property>
+    </class>
+</hibernate-mapping>

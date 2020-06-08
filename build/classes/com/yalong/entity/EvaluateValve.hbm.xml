@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-27 16:05:01 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.yalong.entity.EvaluateValve" table="EVALUATE_VALVE">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="VId" type="java.lang.String">
+            <column name="VID" />
+        </property>
+        <property name="VName" type="java.lang.String">
+            <column name="VNAME" />
+        </property>
+        <property name="VTime" type="java.util.Date">
+            <column name="VTIME" />
+        </property>
+        <property name="VSpeed" type="java.lang.String">
+            <column name="VSPEED" />
+        </property>
+        <property name="VCaliber" type="java.lang.String">
+            <column name="VCALIBER" />
+        </property>
+        <property name="VLength" type="java.lang.String">
+            <column name="VLENGTH" />
+        </property>
+        <property name="VExternalTemperature" type="java.lang.String">
+            <column name="VEXTERNALTEMPERATURE" />
+        </property>
+        <property name="VAmbientTemperature" type="java.lang.String">
+            <column name="VAMBIENTTEMPERATURE" />
+        </property>
+        <property name="VHeatLoss" type="java.lang.String">
+            <column name="VHEATLOSS" />
+        </property>
+        <property name="VResult" type="java.lang.String">
+            <column name="VRESULT" />
+        </property>
+    </class>
+</hibernate-mapping>

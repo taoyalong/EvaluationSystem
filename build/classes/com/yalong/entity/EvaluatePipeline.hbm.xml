@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-27 16:05:01 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.yalong.entity.EvaluatePipeline" table="EVALUATE_PIPELINE">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="PId" type="java.lang.String">
+            <column name="PID" />
+        </property>
+        <property name="PName" type="java.lang.String">
+            <column name="PNAME" />
+        </property>
+        <property name="PTime" type="java.util.Date">
+            <column name="PTIME" />
+        </property>
+        <property name="PSpeed" type="java.lang.String">
+            <column name="PSPEED" />
+        </property>
+        <property name="PCaliber" type="java.lang.String">
+            <column name="PCALIBER" />
+        </property>
+        <property name="PLength" type="java.lang.String">
+            <column name="PLENGTH" />
+        </property>
+        <property name="PExternalTemperature" type="java.lang.String">
+            <column name="PEXTERNAL_TEMPERATURE" />
+        </property>
+        <property name="PAmbientTemperature" type="java.lang.String">
+            <column name="PAMBIENT_TEMPERATURE" />
+        </property>
+        <property name="PHeatLoss" type="java.lang.String">
+            <column name="PHEAT_LOSS" />
+        </property>
+        <property name="PResult" type="java.lang.String">
+            <column name="PRESULT" />
+        </property>
+    </class>
+</hibernate-mapping>

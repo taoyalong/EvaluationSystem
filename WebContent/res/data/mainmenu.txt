@@ -1,0 +1,16 @@
+﻿[
+	{id: "user", text: "信息管理"},
+		
+	{id: "retMange", text: "学生信息管理", pid: "user"},
+	{id: "retrialinfo", text: "基本信息", pid: "retMange", url:"studentinfo/main.jsp"},
+	
+	{id: "retrialinfo", text: "信息导入", pid: "retMange", url:"../retrialinfo/fileimport.jsp"},
+	
+	{id: "fileUpload", text: "文档管理", pid: "user",url:"fileUpload.jsp"},
+		
+	{ id: "right", text: "权限管理"},
+		
+	{id: "password", text: "修改密码",  pid: "right" },
+]
+				
+	
